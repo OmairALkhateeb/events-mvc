@@ -1,0 +1,32 @@
+import 'package:events_mvc/const/app_colore.dart';
+import 'package:events_mvc/view/screen/account.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class AdminHomePage extends StatelessWidget {
+  const AdminHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColor.light,
+          shadowColor: AppColor.darkPink,
+          foregroundColor: AppColor.darkPink,
+          surfaceTintColor: AppColor.darkPink,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: IconButton(
+                onPressed: () {
+                  Get.to(const Account());
+                },
+                icon: const Icon(Icons.add_business_rounded),
+                color: AppColor.darkPink,
+              ),
+            )
+          ],
+        ),
+        drawer: const Drawer());
+  }
+}
